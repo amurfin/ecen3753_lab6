@@ -1,0 +1,47 @@
+Andy Murfin
+ECEN3753
+Lab 6 - Power Measurements
+
+lab2: (polling)
+no leds = 2.01mA 
+1 slider led = 2.49mA
+1 button led = 2.58mA
+2 leds = 2.97mA
+
+lab2: (interrupt w/EM1)
+no leds = 898.5uA = 0.8985mA
+1 slider led = 1.38mA
+1 button led = 1.47mA
+2 leds = 1.95mA
+
+lab3: (No low energy mode)
+no leds = 1.46mA
+1 slider led = 1.95mA
+1 button led  = 2.04mA
+2 leds = 2.54mA
+
+lab3: (EM1 in idle task)
+no leds = 960uA = 0.96mA
+1 slider led = 1.46mA
+1 button led  = 1.55mA
+2 leds = 2.04mA
+
+lab6: (No Low Energy Mode)
+no leds = 1.44mA
+1 slider led = 1.93mA
+1 button led = 2.02mA
+2 leds (button & slider) = 2.52mA
+
+lab 6: (EM1 in idle task)
+no leds = 954uA = 0.954mA
+1 slider led = 1.45mA
+1 button led = 1.54mA
+2 leds (button & slider) = 2.03mA
+
+These power measurements make sense.  Note how Lab 6 w/idle tasks matches almost exactly Lab 3 w/idle task.
+This is because they both utilize the RTOS to task switch and perform almost the same from an energy perspective.
+The only difference between lab 3 and 6 is that 6 uses more "elegant" Inter-Task Communication, whereas Lab 3
+uses global variables.  This makes lab 6 more efficient from a memory perspective, and possibly less prone
+to bugs or undefined behavior - since the RTOS ITC functions include a lot of built-in error checking and debug.
+Lab 6 uses slightly more energy than Lab 2 w/interrupts - but again, the fact that lab 6 is using the RTOS and
+nice, clean ITC functionality I would trust it over Lab 2 just due to memory use and advanced scheduling capability.

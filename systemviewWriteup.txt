@@ -1,0 +1,11 @@
+Andy Murfin
+ECEN3753
+Lab 6 Segger SystemView Writeup (Part II)
+
+4.  As seen in the screenshot "murfin_lab6_sliderinput_period_seggerview.png", the period of the sliderinput 
+task does in fact match the timer period of 100ms.
+
+5.  As seen in "murfin_lab6_buttoninputledoutput_seggerview.png", the LEDOutputTask does in fact occur directly
+after the button input task, everytime.  This is because the button input task posts an event flag which
+The LEDOutputTask is constantly pending for.  Note that the LEDOutputTAsk also is sync'd with the Slider Input Task,
+for the same reason.
